@@ -1,13 +1,14 @@
 from flask import Flask, jsonify
 import os
 import pymysql
+from id import host;
 #from flask_cors import CORS
 
 app = Flask(__name__)
 #CORS(app, resources={r'*':{ 'origins' : 'http://localhost:8080'}}) client와 통신 안해서 이거 필요없음
 
 def Dbconnect():
-    conn = pymysql.connect(host = "fortestflaskaws.chkgnehk1uff.ap-northeast-2.rds.amazonaws.com",
+    conn = pymysql.connect(host = host,
                       user = "testFlask",
                       password = "12345678",
                       db = "disease",
