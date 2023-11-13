@@ -11,7 +11,7 @@ def Dbconnect():
     conn = pymysql.connect(host = host,
                       user = "testFlask",
                       password = "12345678",
-                      db = "disease",
+                      db = "forTest",
                       charset = "utf8")
 
     return conn
@@ -52,14 +52,14 @@ def home() :
 @app.route("/getId")
 def getId() :
     
-    result = SelectId("DISEASE", "id")
+    result = SelectId("disease", "id")
     return result
     
     
 @app.route("/getJsonId")
 def getJsonId() :
     
-    result = SelectId("DISEASE", "id")
+    result = SelectId("disease", "id")
     return jsonify(result)
 
 
